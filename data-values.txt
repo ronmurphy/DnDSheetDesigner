@@ -1,0 +1,120 @@
+const palettes = [
+            { name: 'Default', colors: ['#2c3e50', '#34495e', '#ecf0f1', '#e74c3c'] },
+            { name: 'Forest', colors: ['#1b4332', '#2d6a4f', '#b7e4c7', '#d8f3dc'] },
+            { name: 'Ocean', colors: ['#023e8a', '#0077b6', '#90e0ef', '#caf0f8'] },
+            { name: 'Sunset', colors: ['#7f5539', '#b08968', '#ddb892', '#e6ccb2'] },
+            { name: 'Lavender', colors: ['#5a189a', '#7b2cbf', '#c77dff', '#e0aaff'] },
+            { name: 'Desert', colors: ['#cb997e', '#ddbea9', '#ffe8d6', '#b7b7a4'] },
+            { name: 'Arctic', colors: ['#a4c3b2', '#cce3de', '#eaf4f4', '#f6fff8'] },
+            { name: 'Volcano', colors: ['#540b0e', '#9e2a2b', '#e09f3e', '#fff3b0'] },
+            { name: 'Neon', colors: ['#2b2d42', '#8d99ae', '#edf2f4', '#ef233c'] },
+            { name: 'Pastel', colors: ['#ffcdb2', '#ffb4a2', '#e5989b', '#b5838d'] },
+            { name: 'Autumn', colors: ['#582f0e', '#7f4f24', '#936639', '#a68a64'] },
+            { name: 'Spring', colors: ['#606c38', '#283618', '#fefae0', '#dda15e'] },
+            { name: 'Winter', colors: ['#caf0f8', '#90e0ef', '#00b4d8', '#0077b6'] },
+            { name: 'Summer', colors: ['#ff7b00', '#ff8800', '#ff9500', '#ffa200'] },
+            { name: 'Tropical', colors: ['#264653', '#2a9d8f', '#e9c46a', '#f4a261'] },
+            { name: 'Retro', colors: ['#fe4a49', '#2ab7ca', '#fed766', '#e6e6ea'] },
+            { name: 'Cyberpunk', colors: ['#0d0221', '#0f0326', '#2b0f54', '#7b2cbf'] },
+            { name: 'Steampunk', colors: ['#5e503f', '#8b705e', '#c6ac8f', '#eae0d5'] },
+            { name: 'Monochrome', colors: ['#0a0a0a', '#262626', '#595959', '#a6a6a6'] },
+            { name: 'Candy', colors: ['#f72585', '#7209b7', '#3a0ca3', '#4361ee'] },
+            { name: 'Midnight', colors: ['#03071e', '#370617', '#6a040f', '#9d0208'] },
+            { name: 'Emerald', colors: ['#004b23', '#006400', '#007200', '#008000'] },
+            { name: 'Ruby', colors: ['#590d22', '#800f2f', '#a4133c', '#c9184a'] },
+            { name: 'Sapphire', colors: ['#03045e', '#023e8a', '#0077b6', '#0096c7'] },
+            { name: 'Amethyst', colors: ['#240046', '#3c096c', '#5a189a', '#7b2cbf'] },
+            { name: 'Topaz', colors: ['#fb8500', '#ffb703', '#fdc500', '#ffd60a'] },
+            { name: 'Opal', colors: ['#caf0f8', '#ade8f4', '#90e0ef', '#48cae4'] },
+            { name: 'Onyx', colors: ['#0b090a', '#161a1d', '#242423', '#1b1b1b'] },
+            { name: 'Pearl', colors: ['#f8f9fa', '#e9ecef', '#dee2e6', '#ced4da'] },
+            { name: 'Garnet', colors: ['#641220', '#6e1423', '#85182a', '#a11d33'] },
+            { name: 'Peridot', colors: ['#606c38', '#283618', '#fefae0', '#dda15e'] },
+            { name: 'Aquamarine', colors: ['#006d77', '#83c5be', '#edf6f9', '#ffddd2'] },
+            { name: 'Citrine', colors: ['#ff9f1c', '#ffbf69', '#fff1d0', '#cbf3f0'] },
+            { name: 'Tanzanite', colors: ['#2d00f7', '#6a00f4', '#8900f2', '#a100f2'] },
+            { name: 'Turquoise', colors: ['#006466', '#065a60', '#0b525b', '#144552'] },
+            { name: 'Morganite', colors: ['#f4acb7', '#ffd7ba', '#ffcad4', '#f4acb7'] },
+            { name: 'Alexandrite', colors: ['#390099', '#9e0059', '#ff0054', '#ff5400'] },
+            { name: 'Jade', colors: ['#004b23', '#006400', '#007200', '#008000'] },
+            { name: 'Moonstone', colors: ['#f8f9fa', '#e9ecef', '#dee2e6', '#ced4da'] },
+            { name: 'Sunstone', colors: ['#ff9f1c', '#ffbf69', '#fff1d0', '#cbf3f0'] },
+            { name: 'Bloodstone', colors: ['#641220', '#6e1423', '#85182a', '#a11d33'] },
+            { name: 'Labradorite', colors: ['#495057', '#6c757d', '#adb5bd', '#ced4da'] },
+            { name: 'Malachite', colors: ['#004b23', '#006400', '#007200', '#008000'] },
+            { name: 'Lapis Lazuli', colors: ['#03045e', '#023e8a', '#0077b6', '#0096c7'] },
+            { name: 'Amber', colors: ['#ff9f1c', '#ffbf69', '#fff1d0', '#cbf3f0'] },
+            { name: 'Jet', colors: ['#0b090a', '#161a1d', '#242423', '#1b1b1b'] },
+            { name: 'Coral', colors: ['#ff4d6d', '#ff758f', '#ff8fa3', '#ffb3c1'] },
+            { name: 'Obsidian', colors: ['#0b090a', '#161a1d', '#242423', '#1b1b1b'] },
+            { name: 'Quartz', colors: ['#f8f9fa', '#e9ecef', '#dee2e6', '#ced4da'] },
+            { name: 'Agate', colors: ['#582f0e', '#7f4f24', '#936639', '#a68a64'] },
+        ];
+
+        const weapons = [
+            'Club', 'Dagger', 'Greatclub', 'Handaxe', 'Javelin', 'Light hammer', 'Mace', 'Quarterstaff',
+            'Sickle', 'Spear', 'Crossbow, light', 'Dart', 'Shortbow', 'Sling', 'Battleaxe', 'Flail',
+            'Glaive', 'Greataxe', 'Greatsword', 'Halberd', 'Lance', 'Longsword', 'Maul', 'Morningstar',
+            'Pike', 'Rapier', 'Scimitar', 'Shortsword', 'Trident', 'War pick', 'Warhammer', 'Whip',
+            'Blowgun', 'Crossbow, hand', 'Crossbow, heavy', 'Longbow', 'Net'
+        ];
+
+        const races = [
+            'Dragonborn', 'Dwarf', 'Elf', 'Gnome', 'Half-Elf', 'Halfling', 'Half-Orc', 'Human', 'Tiefling',
+            'Aarakocra', 'Genasi', 'Goliath', 'Aasimar', 'Bugbear', 'Firbolg', 'Goblin', 'Hobgoblin',
+            'Kenku', 'Kobold', 'Lizardfolk', 'Orc', 'Tabaxi', 'Triton', 'Yuan-ti Pureblood'
+        ];
+
+        const classes = [
+            'Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue',
+            'Sorcerer', 'Warlock','Wizard', 'Artificer', 'Blood Hunter'
+        ];
+
+        const skills = [
+            { name: 'Acrobatics', attribute: 'dexterity' },
+            { name: 'Animal Handling', attribute: 'wisdom' },
+            { name: 'Arcana', attribute: 'intelligence' },
+            { name: 'Athletics', attribute: 'strength' },
+            { name: 'Deception', attribute: 'charisma' },
+            { name: 'History', attribute: 'intelligence' },
+            { name: 'Insight', attribute: 'wisdom' },
+            { name: 'Intimidation', attribute: 'charisma' },
+            { name: 'Investigation', attribute: 'intelligence' },
+            { name: 'Medicine', attribute: 'wisdom' },
+            { name: 'Nature', attribute: 'intelligence' },
+            { name: 'Perception', attribute: 'wisdom' },
+            { name: 'Performance', attribute: 'charisma' },
+            { name: 'Persuasion', attribute: 'charisma' },
+            { name: 'Religion', attribute: 'intelligence' },
+            { name: 'Sleight of Hand', attribute: 'dexterity' },
+            { name: 'Stealth', attribute: 'dexterity' },
+            { name: 'Survival', attribute: 'wisdom' }
+        ];
+
+        const armors = [
+            { name: 'Padded', type: 'Light', ac: 11, addDex: true },
+            { name: 'Leather', type: 'Light', ac: 11, addDex: true },
+            { name: 'Studded leather', type: 'Light', ac: 12, addDex: true },
+            { name: 'Hide', type: 'Medium', ac: 12, addDex: true, maxDex: 2 },
+            { name: 'Chain shirt', type: 'Medium', ac: 13, addDex: true, maxDex: 2 },
+            { name: 'Scale mail', type: 'Medium', ac: 14, addDex: true, maxDex: 2 },
+            { name: 'Breastplate', type: 'Medium', ac: 14, addDex: true, maxDex: 2 },
+            { name: 'Half plate', type: 'Medium', ac: 15, addDex: true, maxDex: 2 },
+            { name: 'Ring mail', type: 'Heavy', ac: 14, addDex: false },
+            { name: 'Chain mail', type: 'Heavy', ac: 16, addDex: false },
+            { name: 'Splint', type: 'Heavy', ac: 17, addDex: false },
+            { name: 'Plate', type: 'Heavy', ac: 18, addDex: false },
+            { name: 'Shield', type: 'Shield', ac: 2, addDex: false }
+        ];
+
+        function updateAttributeDisplay() {
+            for (const [attribute, value] of Object.entries(attributes)) {
+                const button = document.querySelector(`.attribute-button[data-attribute="${attribute}"]`);
+                button.innerHTML = `
+                    <span class="asm-value">${getASMValue(value)}</span>
+                    <span class="dice-icon">${button.dataset.boolHasStats === 'false' ? '🎲' : ''}</span>
+                    ${value}
+                    <span class="attribute-name">${attribute.substring(0, 3).toUpperCase()}</span>
+                `;
+            }
+        }
